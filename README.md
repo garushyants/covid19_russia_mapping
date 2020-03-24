@@ -14,6 +14,7 @@ All the code and neccessary data is provided in the repository
 ## Results
 ### Population structure
 
+
 Population signficantly vary by region. The map below shows the log10 population by region.
 ![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig0population.png)
 
@@ -21,6 +22,7 @@ For COVID infection the most important is portion of the elderly people, because
 On the map below you can see  the percentage of people over 80 by region. The region vary by this metrics, with most people over 80 located in the European part of Russia.
 
 ![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig1perc80.png)
+
 
 ### Estimated mortality rate
 Knowing the population demographic structure we can estimate the expected mortality rate by region.
@@ -32,3 +34,5 @@ Because the population density in different regions is different it is important
 As we ecxpect the most affected are regions in the European part of Russia
 
 ![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Table3.png)
+
+
