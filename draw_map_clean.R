@@ -131,8 +131,8 @@ final_IMV_bottom<-final_IMV[order(final_IMV$PerPerIMV),][c(1:10),c(6,5)]
 
 #Worst mortality
 bins.df.mort$region_tr<-stri_trans_general(bins.df.mort$region, "russian-latin/bgn")
-bins.df.mort_top<-bins.df.mort[order(-bins.df.mort$sum),][c(1:10),c(13,10)]
-bins.df.mort_bottom<-bins.df.mort[order(bins.df.mort$sum),][c(1:10),c(13,10)]
+bins.df.mort_top<-bins.df.mort[order(-bins.df.mort$percent),][c(1:10),c(13,12)]
+bins.df.mort_bottom<-bins.df.mort[order(bins.df.mort$percent),][c(1:10),c(13,12)]
 #################
 #Visualisation
 #################
@@ -221,7 +221,7 @@ Table2<-grid.arrange(top=textGrob("Critical cases per IMV.\nThe ten best and wor
              tableGrob(final_IMV_top,theme = tbottom, cols = NULL, rows =NULL),
              nrow=1)
 #Mortality
-Table3<-grid.arrange(top=textGrob("Mortality\nThe ten best and worst regions",
+Table3<-grid.arrange(top=textGrob("Mortality rate (%,population)\nThe ten best and worst regions",
                                   gp=gpar(fontsize=50)),
                      tableGrob(bins.df.mort_bottom,theme = ttop, cols = NULL, rows =NULL),
                      tableGrob(bins.df.mort_top,theme = tbottom, cols = NULL, rows =NULL),
