@@ -145,7 +145,10 @@ common = theme_classic()+
         axis.ticks = element_blank(), 
         axis.title.x = element_blank(), 
         axis.title.y = element_blank(),
-        legend.position="top")
+        legend.position="top",
+        legend.text = element_text(size =11),
+        legend.title = element_text(size =18),
+        legend.key.size = unit(0.7, "cm"))
 ####
 #Plot population by region
 pop<-ggplot(data = rus.map) +
