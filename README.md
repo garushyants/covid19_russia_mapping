@@ -13,4 +13,11 @@ All the code and neccessary data is provided in the repository
 
 ## Results
 
+Population signficantly vary by region. The map below shows the log10 population by region.
 ![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig0population.png)
+
+For COVID infection the most important is portion of the elderly people, because they are the ones who are most affected.
+On the map below you can see  the percentage of people over 80 by region. The region vary by this metrics, with most people over 80 located in the European part of Russia.
+
+![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig1perc80.png)
+
