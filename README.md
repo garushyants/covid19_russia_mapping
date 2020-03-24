@@ -1,6 +1,6 @@
 # covid19_russia_mapping
-##This project aimed at describing outcomes of COVID-19 epidemics in Russia.
-##We utilize demographic data and estimates for mortality and hospitalization rates, as well as available data on invasive ##mechanical ventilation units per region to estimate the most vulnerable ones.
+## This project aimed at describing outcomes of COVID-19 epidemics in Russia.
+## We utilize demographic data and estimates for mortality and hospitalization rates, as well as available data on invasive mechanical ventilation units per region to estimate the most vulnerable ones.
 
 The provided estimates have some caveats:
 1. We expect the uniform attack  rate for different age groups
@@ -11,4 +11,6 @@ The provided estimates have some caveats:
 
 All the code and neccessary data is provided in the repository
 
-Results
+## Results
+
+![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig0population.png)
