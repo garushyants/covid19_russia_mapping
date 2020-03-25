@@ -122,6 +122,7 @@ final_IMV$PerPerIMV<-round(bins.df.critical$sum/final_IMV$IMVnum, digits =1)
 ##################
 #Final table with data
 output_table<-as.data.frame(cbind(region=bins.df.critical$region,region_tr=bins.df.critical$region_tr))
+output_table$population.total<-age_data_all_sorted$sum
 output_table$hospitalized.total<-bins.df.hosp$sum
 output_table$hospitalized.perc<-bins.df.hosp$percent
 output_table$critical.total<-bins.df.critical$sum
