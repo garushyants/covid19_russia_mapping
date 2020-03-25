@@ -123,6 +123,7 @@ final_IMV$PerPerIMV<-round(bins.df.critical$sum/final_IMV$IMVnum, digits =1)
 #Final table with data
 output_table<-as.data.frame(cbind(region=bins.df.critical$region,region_tr=bins.df.critical$region_tr))
 output_table$population.total<-age_data_all_sorted$sum
+output_table$over80.perc<-age_data_all_o80$part
 output_table$hospitalized.total<-bins.df.hosp$sum
 output_table$hospitalized.perc<-bins.df.hosp$percent
 output_table$critical.total<-bins.df.critical$sum
@@ -131,7 +132,7 @@ output_table$lethality.total<-bins.df.mort$sum
 output_table$lethality.perc<-bins.df.mort$percent
 output_table$critical.per.IMV<-final_IMV$PerPerIMV
 
-write.csv(output_table, file = "results.csv", sep =",")
+write.csv(output_table, file = "results.csv", sep = ',')
 
 #################
 #Visualisation
