@@ -18,24 +18,25 @@ setwd(dirname(current_path ))
 #and then combined with python script.
 #The final table is provided with the repository
 ###
-age_data<-read.csv("rosstat_combined.csv",
+age_data<-read.csv("rosstat_combined.tsv",
                    stringsAsFactors = FALSE, sep = "\t", header = T)
 
 #IMV data
 #Invasive mechanical ventilation (IMV) data was obtained from meduza.io:
 #https://meduza.io/feature/2020/03/20/v-italii-iz-za-koronavirusa-katastroficheski-ne-hvataet-apparatov-ivl-v-rossii-ih-gorazdo-bolshe-no-eto-ne-znachit-chto-my-luchshe-gotovy-k-epidemii
 #We utilized only data on IMV and ignored ECMO
+#As well the data was added from: https://www.hwcompany.ru/blog/expert/nali4ie_apparatov_ivl_na_22_03_2020
 #The data is provided in the repository
 ###
-IMV_data<-read.csv("IMV_meduza.csv",
-                   stringsAsFactors = FALSE, sep = "\t", header = TRUE)
+IMV_data<-read.csv("IMV_meduza_impr.csv",
+                   stringsAsFactors = FALSE, sep = ",", header = TRUE)
 
 #Mortality rates and hospitalisation
 #Data on mortality and hospitalization rates was obtained from Verity et al., 2020, medarxiv
 #We modified the rate for the age group 0-9 from 0.0 to 0.001, expecting that there have to be some cases in this age group
 #Data on cases requiring critical care obtained from Imperial College COVID-19 Report 9:
 #https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf
-Mort.Hosp<-read.csv("mortality_hosp_ICU.csv",
+Mort.Hosp<-read.csv("mortality_hosp_ICU.tsv",
                     stringsAsFactors = FALSE, sep = "\t", header = TRUE)
 ##transform from percents and rename rows
 Mort.Hosp.tr<-Mort.Hosp[,c(2:10)]*0.01
@@ -104,8 +105,9 @@ bins.df.hosp$sum<-rowSums(bins.df.hosp)
 bins.df.hosp$region<-age_data_all_sorted$region
 #Calculate critical
 bins.df.critical<-as.data.frame(mapply('*', bins.df.hosp[,c(0:9)], Mort.Hosp.tr[3,]))
-bins.df.critical$sum<-rowSums(bins.df.critical)
+bins.df.critical$sum<-as.integer(rowSums(bins.df.critical))
 bins.df.critical$region<-age_data_all_sorted$region
+bins.df.critical$region_tr<-stri_trans_general(bins.df.critical$region, "russian-latin/bgn")
 #percents
 bins.df.hosp$percent<-round(bins.df.hosp$sum*100/age_data_all_sorted$sum, digits = 2)
 bins.df.critical$percent<-round(bins.df.critical$sum*100/age_data_all_sorted$sum, digits = 2)
@@ -118,21 +120,18 @@ final_IMV$IMVper<-final_IMV$IMVnum*100000/age_data_all_sorted$sum
 final_IMV$PerPerIMV<-round(bins.df.critical$sum/final_IMV$IMVnum, digits =1)
 
 ##################
-###Worst and best regions by different metrics
-#Regions with highest and lowest % of critical cases
-bins.df.critical$region_tr<-stri_trans_general(bins.df.critical$region, "russian-latin/bgn")
-bins.df.critical_top<-bins.df.critical[order(-bins.df.critical$percent),][c(1:10),c(13,12)]
-bins.df.critical_bottom<-bins.df.critical[order(bins.df.critical$percent),][c(1:10),c(13,12)]
+#Final table with data
+output_table<-as.data.frame(cbind(region=bins.df.critical$region,region_tr=bins.df.critical$region_tr))
+output_table$lethality.perc<-bins.df.mort$percent
+output_table$lethality<-bins.df.mort$sum
+output_table$hospitalized.perc<-bins.df.hosp$percent
+output_table$hospitalized<-bins.df.hosp$sum
+output_table$critical.perc<-bins.df.critical$percent
+output_table$critical<-bins.df.critical$sum
+output_table$IMV.per.critical<-final_IMV$PerPerIMV
 
-#The worst cases per IMV ratio
-final_IMV$region_tr<-stri_trans_general(final_IMV$region, "russian-latin/bgn")
-final_IMV_top<-final_IMV[order(-final_IMV$PerPerIMV),][c(1:10),c(6,5)]
-final_IMV_bottom<-final_IMV[order(final_IMV$PerPerIMV),][c(1:10),c(6,5)]
+write.csv(output_table, file = "results.csv", sep = ",")
 
-#Worst mortality
-bins.df.mort$region_tr<-stri_trans_general(bins.df.mort$region, "russian-latin/bgn")
-bins.df.mort_top<-bins.df.mort[order(-bins.df.mort$percent),][c(1:10),c(13,12)]
-bins.df.mort_bottom<-bins.df.mort[order(bins.df.mort$percent),][c(1:10),c(13,12)]
 #################
 #Visualisation
 #################
@@ -207,41 +206,20 @@ PerPerIMV<-ggplot(data = rus.map) +
   coord_sf(crs=projection)+
   labs(fill = "Critical cases per one IMV")+
   common
-##########
-#Tables
-ttop<-ttheme_minimal(base_colour = "#006d2c", base_size = 38)
-tbottom<-ttheme_minimal(base_colour = "#bd0026", base_size = 38)
-#Critical cases in region(% of population)
-Table1<-grid.arrange(top=textGrob("Critical cases in region (population, %). \nThe ten best and worst regions.",
-                                  gp=gpar(fontsize=50)),
-                     tableGrob(bins.df.critical_bottom,theme = ttop, cols = NULL, rows =NULL),
-                     tableGrob(bins.df.critical_top,theme = tbottom, cols = NULL, rows =NULL),
-                     nrow=1)
-#Critical cases per IMV: top 10, bottom 10
-Table2<-grid.arrange(top=textGrob("Critical cases per IMV.\nThe ten best and worst regions",
-                                  gp=gpar(fontsize=50)),
-             tableGrob(final_IMV_bottom,theme = ttop, cols = NULL, rows =NULL),
-             tableGrob(final_IMV_top,theme = tbottom, cols = NULL, rows =NULL),
-             nrow=1)
-#Mortality
-Table3<-grid.arrange(top=textGrob("Mortality rate (%,population)\nThe ten best and worst regions",
-                                  gp=gpar(fontsize=50)),
-                     tableGrob(bins.df.mort_bottom,theme = ttop, cols = NULL, rows =NULL),
-                     tableGrob(bins.df.mort_top,theme = tbottom, cols = NULL, rows =NULL),
-                     nrow=1)
 #############################################
 #Save plots
+dimh<-20
+dimw<-38
 path<-"Figures"
-ggsave("Fig0population.png",plot= pop, path=path)
-ggsave("Fig1perc80.png",plot= perc80, path=path)
-ggsave("Fig2mortality.png",plot= mort, path=path)
-ggsave("Fig3hospitalized.png",plot= hospperc, path=path)
-ggsave("Fig4critical.png",plot= criticalperc, path=path)
-ggsave("Fig5IMPper100000.png",plot= IMVperp, path=path)
-ggsave("Fig6CasesperIMP.png",plot= PerPerIMV, path=path)
-ggsave("Table1.png",plot= Table1, path=path)
-ggsave("Table2.png",plot= Table2, path=path)
-ggsave("Table3.png",plot= Table3, path=path)
+ggsave("Fig0population.png",plot= pop, path=path, width = dimw, height = dimh, units = "cm")
+ggsave("Fig1perc80.png",plot= perc80, path=path, width = dimw, height = dimh, units = "cm")
+ggsave("Fig2mortality.png",plot= mort, path=path, width = dimw, height = dimh, units = "cm")
+ggsave("Fig3hospitalized.png",plot= hospperc, path=path, width = dimw, height = dimh, units = "cm")
+ggsave("Fig4critical.png",plot= criticalperc, path=path, width = dimw, height = dimh, units = "cm")
+ggsave("Fig5IMVper100000.png",plot= IMVperp, path=path, width = dimw, height = dimh, units = "cm")
+ggsave("Fig6CasesperIMV.png",plot= PerPerIMV, path=path, width = dimw, height = dimh, units = "cm")
+
+
 
 
 
