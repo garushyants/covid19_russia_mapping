@@ -145,9 +145,9 @@ common = theme_classic()+
         axis.title.x = element_blank(), 
         axis.title.y = element_blank(),
         legend.position="top",
-        legend.text = element_text(size =11),
-        legend.title = element_text(size =18),
-        legend.key.size = unit(0.7, "cm"))
+        legend.text = element_text(size =6),
+        legend.title = element_text(size =12),
+        legend.key.size = unit(0.4, "cm"))
 ####
 #Plot population by region
 pop<-ggplot(data = rus.map) +
@@ -208,8 +208,8 @@ PerPerIMV<-ggplot(data = rus.map) +
   common
 #############################################
 #Save plots
-dimh<-20
-dimw<-38
+dimh<-12
+dimw<-20
 path<-"Figures"
 ggsave("Fig0population.png",plot= pop, path=path, width = dimw, height = dimh, units = "cm")
 ggsave("Fig1perc80.png",plot= perc80, path=path, width = dimw, height = dimh, units = "cm")
