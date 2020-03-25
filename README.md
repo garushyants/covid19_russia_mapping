@@ -64,7 +64,7 @@ As you can see this distribution is nonuniform. The most IMVs units per capita a
 Now we can combine the information on IMVs with the information about critical cases.
 The map below shows this information.
 
-![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig6CasesperIMP.png)
+![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig6CasesperIMV.png)
 
 In the table below you can see the ten best prepared (green) and the ten worst prepared regions (red)
 
