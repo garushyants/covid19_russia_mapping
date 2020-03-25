@@ -1,3 +1,6 @@
+
+All results obtained here are available in [results.csv](https://github.com/garushyants/covid19_russia_mapping/blob/master/results.csv)
+
 ## Methods
 ### Demographics data
 Data on 2019 demographics by region was obtained from [Rosstat] (https://gks.ru/bgd/regl/b19_111/Main.htm), and then combined with inhouse python script.
@@ -11,5 +14,10 @@ The resulting table [IMV_meduza_impr.csv](https://github.com/garushyants/covid19
 ### Mortality and hospitalization rates
 Data on mortality and hospitalization rates was obtained from [Verity et al., 2020, medarxiv](https://www.medrxiv.org/content/10.1101/2020.03.09.20033357v1.full.pdf)
 We modified the rate for the age group 0-9 from 0.0 to 0.001, expecting that there have to be some cases in this age group.
-Data on cases requiring critical care obtained from [Imperial College COVID-19 Report 9](https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf)
+Data on cases requiring critical care obtained from [Ferguson et al., 2020 Impact of non-pharmaceutical interventions (NPIs) to reduce COVID-19 mortality and healthcare demand](https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf)
 All utilized parameters are provided in [mortality_hosp_ICU.tsv](https://github.com/garushyants/covid19_russia_mapping/blob/master/mortality_hosp_ICU.tsv).
+
+## Acknowledgements
+This work was inspired by the [work of Ian Miller et al. on COVID-19 burden in US](https://github.com/ianfmiller/covid19-burden-mapping/blob/master/README.md).
+
+
