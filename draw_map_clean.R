@@ -45,7 +45,13 @@ rownames(Mort.Hosp.tr)<-Mort.Hosp$X
 ######
 #Map of Russian Federation was obtained from GADM:
 #https://gadm.org/download_country_v3.html
-rus.map <- readRDS("gadm36_RUS_1_sf.rds")
+rus.map.init <- readRDS("gadm36_RUS_1_sf.rds")
+ukr.map <- readRDS("gadm36_UKR_1_sf.rds")
+##subset Crimea
+Crimea.map <- ukr.map[ukr.map$NAME_1 %in% c("Crimea","Sevastopol'"),]
+Crimea.map$NL_NAME_1<-c("Республика Крым","г. Севастополь")
+####
+rus.map<-rbind(rus.map.init, Crimea.map)
 ##correcting wrong names in the map
 rus.map$NL_NAME_1[rus.map$NL_NAME_1 == "Пермская край"] <- "Пермский край"
 rus.map$NL_NAME_1[rus.map$NL_NAME_1 == "Камчатская край"] <- "Камчатский край"
