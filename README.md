@@ -19,8 +19,6 @@
 4. Data on ventilators is unavailable for some regions.
 5. We assume that patients are ascribed to IMV units in their home regions. 
 
-All code and source data is provided in the repository.
-
 ## Results
 ### Population 
 
