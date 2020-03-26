@@ -1,6 +1,9 @@
 # Modelling COVID burden in regions of Russia
-### Authors: Sofya Garushyants and Georgii Bazykin
-For any information please contact Sofya Garushyants at garushyants at iitp dot ru
+#### Authors: Sofya Garushyants(U+00B9),* and Georgii Bazykin(U+00B9),(U+00B2)
+(U+00B9) IITP RAS
+(U+00B2) Skoltech
+* garushyants at iitp dot ru
+
 
 ### Abstract
 
