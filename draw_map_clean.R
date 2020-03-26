@@ -249,7 +249,7 @@ critaligned <- gtable_combine(critb,critt, along=1)
 IMValigned <- gtable_combine(IMVb,IMVt, along=1)
 mortaligned <- gtable_combine(mortb,mortt, along=1)
 
-Table2<-grid.arrange(top = "Table 2. Fatality rate (%, population).\nThe ten top and bottom regions",
+Table2<-grid.arrange(top = "Table 2. Lethality (%, population).\nThe ten top and bottom regions",
                      mortaligned, nrow=1)
 Table1<-grid.arrange(top = "Table 1. Critical cases in region (population, %).\nThe ten top and bottom regions",
                      critaligned, nrow=1)
@@ -277,7 +277,7 @@ ggsave("Table3.png",plot= Table3, path=path, width = 20, height = 9, units = "cm
 #Plots in Russian
 popru<-pop+labs(fill = "Население (log10)")
 perc80ru<-perc80+labs(fill = "Население старше 80 (%)")
-mortru<-mort + labs(fill ="Смертность (кол-во человек)")
+mortru<-mort + labs(fill ="Число смертей")
 hosppercru<-hospperc + labs(fill ="Госпитализация (% населения)")
 criticalpercru<-criticalperc + labs(fill ="Случаи, требующие интенсивной терапии (% населения)")
 IMVperpru<-IMVperp + labs(fill ="Количество ИВЛ на 100000 человек")
