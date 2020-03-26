@@ -48,7 +48,7 @@ Below, we estimate for each region
 The European part of Russia is the most affected, due to a large fraction of elderly population.
 
 
-### Fatality 
+### Lethality 
 The predicted age-stratified population-wide IFR in Russia under the assumptions of ([Verity et al., 2020](https://www.medrxiv.org/content/10.1101/2020.03.09.20033357v1.full.pdf)) is 0.89%. The map below provides the absolute cumulative number of expected COVID-related deaths per region. The regions with large populations (Moscow, Moscow Region, St. Petersburg and the regions in Southern European Russia) will of course be most badly hit in terms of absolute counts. 
 
 ![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig2mortality.png)
