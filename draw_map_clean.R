@@ -279,9 +279,9 @@ popru<-pop+labs(fill = "Население (log10)")
 perc80ru<-perc80+labs(fill = "Население старше 80 (%)")
 mortru<-mort + labs(fill ="Смертность (кол-во человек)")
 hosppercru<-hospperc + labs(fill ="Госпитализация (% населения)")
-criticalpercru<-criticalperc + labs(fill ="Критические случаи (% населения)")
+criticalpercru<-criticalperc + labs(fill ="Случаи, требующие интенсивной терапии (% населения)")
 IMVperpru<-IMVperp + labs(fill ="Количество ИВЛ на 100000 человек")
-PerPerIMVru<-PerPerIMV + labs(fill ="Количество критических случаев на ИВЛ")
+PerPerIMVru<-PerPerIMV + labs(fill ="Количество случаев, требующих интенсивной терапии, на аппарат ИВЛ")
 ##tables in russian
 critbru<-tableGrob(bins.df.critical_bottom[,c(1,3)],theme = ttop, cols = NULL, rows =NULL)
 crittru<-tableGrob(bins.df.critical_top[,c(1,3)],theme = tbottom, cols = NULL, rows =NULL)
@@ -296,9 +296,9 @@ mortalignedru <- gtable_combine(mortbru,morttru, along=1)
 
 Table2ru<-grid.arrange(top = "Таблица 2. Смертность (% населения).\nДесять регионов с самым высоким и низким числом",
                        mortalignedru, nrow=1)
-Table1ru<-grid.arrange(top = "Таблица 1. Критические случаи по регионам (% населения).\nДесять регионов с самым высоким и низким числом",
+Table1ru<-grid.arrange(top = "Таблица 1. Случаи, требующие интенсивной терапии, по регионам (% населения).\nДесять регионов с самым высоким и низким числом",
                        critalignedru, nrow=1)
-Table3ru<-grid.arrange(top = "Таблица 3. Количество критических случаев на один ИВЛ.\nДесять регионов с самым высоким и низким числом",
+Table3ru<-grid.arrange(top = "Таблица 3. Количество случаев, требующих интенсивной терапии, на аппарат ИВЛ.\nДесять регионов с самым высоким и низким числом",
                        IMValignedru, nrow=1)
 ##############Save
 pathru<-"Figures_ru"

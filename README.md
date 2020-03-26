@@ -1,4 +1,4 @@
-# Modelling COVID burden in regions of Russia
+# Modelling COVID-19 burden in regions of Russia
 #### Authors: Sofya Garushyants &#x00B9;,* and Georgii Bazykin &#x00B9;,&#x00B2;
 &#x00B9; IITP RAS  
 &#x00B2; Skoltech  
