@@ -73,7 +73,8 @@ The breakdown of all variables by region is also available in table format here:
 ### Demographics data
 Data on 2019 demographic structure by region was obtained from [Rosstat](https://gks.ru/bgd/regl/b19_111/Main.htm) and combined with a python script.
 The final table is provided  [here](https://github.com/garushyants/covid19_russia_mapping/blob/master/rosstat_combined.tsv).
-
+### Map data
+Maps for Russia and Ukraine were downloaded from [GADM](https://gadm.org/download_country_v3.html). From map of Ukraine we substructed the Republic of Crimea and Sevastopol' and added those regions to the resulting map. Both maps are provided in the repository.
 ### IMV data
 Estimates for the numbers of invasive mechanical ventilators (IMV) were obtained from [meduza.io](https://meduza.io/feature/2020/03/20/v-italii-iz-za-koronavirusa-katastroficheski-ne-hvataet-apparatov-ivl-v-rossii-ih-gorazdo-bolshe-no-eto-ne-znachit-chto-my-luchshe-gotovy-k-epidemii) with additions from Headway [current report](https://www.hwcompany.ru/blog/expert/nali4ie_apparatov_ivl_na_22_03_2020).
 The resulting table [IMV_meduza_impr.csv](https://github.com/garushyants/covid19_russia_mapping/blob/master/IMV_meduza_impr.csv) is available in repository.

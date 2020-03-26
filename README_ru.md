@@ -74,7 +74,8 @@
 ### Демографические данные
 Данные по половозрастному составу на 1 января 2019 были получены с сайта [Федеральной службы  государственной статистики](https://gks.ru/bgd/regl/b19_111/Main.htm) и собраны в единую таблицу при помощи скрипта на языке программирования Python.
 Финальная таблица расположена [здесь](https://github.com/garushyants/covid19_russia_mapping/blob/master/rosstat_combined.tsv).
-
+### Карты
+Карты России и Украины были скачены с [GADM](https://gadm.org/download_country_v3.html). Из карты Украины была взята информация о Республике Крым и г. Севастополь и добавлена к финальной карте. Обе карты включены в репозиторий.
 ### Данные по количеству аппаратов ИВЛ
 Оценки числа аппаратов ИВЛ по регионам России были получены из статьи на сайте [meduza.io](https://meduza.io/feature/2020/03/20/v-italii-iz-za-koronavirusa-katastroficheski-ne-hvataet-apparatov-ivl-v-rossii-ih-gorazdo-bolshe-no-eto-ne-znachit-chto-my-luchshe-gotovy-k-epidemii) и дополнены данными, опубликованными агенством Headway в [отчете](https://www.hwcompany.ru/blog/expert/nali4ie_apparatov_ivl_na_22_03_2020).
 Итоговая таблица, содержащая эти данные,  [IMV_meduza_impr.csv](https://github.com/garushyants/covid19_russia_mapping/blob/master/IMV_meduza_impr.csv) находится в репозитории.
