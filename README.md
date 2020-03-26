@@ -85,3 +85,4 @@ All utilized parameters are provided in [mortality_hosp_ICU.tsv](https://github.
 ## Acknowledgements
 This work was inspired by the [work of Ian Miller et al. on COVID-19 burden in the USA](https://github.com/ianfmiller/covid19-burden-mapping/blob/master/README.md).
 
+
