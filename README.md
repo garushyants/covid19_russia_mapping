@@ -1,7 +1,7 @@
 # Modelling COVID burden in regions of Russia
 #### Authors: Sofya Garushyants &#x00B9;,* and Georgii Bazykin &#x00B9;,&#x00B2;
-&#x00B9; IITP RAS; 
-&#x00B2; Skoltech
+&#x00B9; IITP RAS  
+&#x00B2; Skoltech  
 *garushyants at iitp dot ru
 
 ### Abstract
@@ -63,7 +63,7 @@ Here, we analyze the availability of IMV units across regions from public data. 
 
 As shown above, differences in demographic structure between regions will lead to differences in the proportion of population requiring critical care. Combined with discrepancies in the numbers of units, this leads to major differences between regions in IMV unit occupancies over the course of the epidemic. The predicted cumulative number of critical cases per IMV unit ranges between 7.4 for the Khanty-Mansiyskiy region and 210.0 for the Kaluzhskaya region. 
 
-![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig6CasesperIMP.png)
+![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig6CasesperIMV.png)
 
 ![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Table3.png)
 
