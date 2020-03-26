@@ -19,14 +19,13 @@ All code and source data is provided in the repository.
 ## Results
 ### Population 
 
-
 The map below shows the log10 population by region.
+
 ![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig0population.png)
 
 The elderly are the group most affected by the COVID infection, with the estimated IFR of 7.8% for people over 80 y.o. The map below shows the percentage of people over 80 y.o. by region. The regions with the highest fraction of people over 80 y.o. are those in the European part of Russia.
 
 ![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig1perc80.png)
-
 
 ### Cases requiring hospitalizations or critical care
 
@@ -60,7 +59,7 @@ Here, we analyze the availability of IMV units across regions from public data. 
 
 As shown above, differences in demographic structure between regions will lead to differences in the proportion of population requiring critical care. Combined with discrepancies in the numbers of units, this leads to major discrepancies between regions in IMV unit occupancies over the course of the epidemic. The predicted number of critical cases per IMV unit over the course of the epidemic ranges between 7.4 for the Khanty-Mansiyskiy region and 210.0 for the Kaluzhskaya region. 
 
-![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig6CasesperIMP.png)
+![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig6CasesperIMV.png)
 
 ![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Table3.png)
 
