@@ -1,17 +1,17 @@
-# Modelling COVID burden in regions of Russia
+# Моделирование заболеваемости COVID в регионах России
 #### Авторы: Софья Гарушянц &#x00B9;,* и Георгий Базыкин &#x00B9;,&#x00B2;
-&#x00B9; ИППИ РАН 
-&#x00B2; Сколтех 
+&#x00B9; ИППИ РАН  
+&#x00B2; Сколтех  
 *garushyants at iitp dot ru
 
 ## !!Русский текст дополняется!!
 
-[English version/Английская версия(https://github.com/garushyants/covid19_russia_mapping/blob/master/README.md)
+[English version/Английская версия](https://github.com/garushyants/covid19_russia_mapping/blob/master/README.md)
 
 ## Результаты
 ### Структура популяции
 
-![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig0population.png)
+![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures_ru/Fig0populationru.png)
 
 ![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures_ru/Fig1perc80ru.png)
 
