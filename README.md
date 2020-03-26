@@ -1,14 +1,14 @@
 # Modelling COVID burden in regions of Russia
 #### Authors: Sofya Garushyants &#x00B9;,* and Georgii Bazykin &#x00B9;, &#x00B2;
-&#x00B9; IITP RAS
+&#x00B9; IITP RAS; 
 &#x00B2; Skoltech
 * garushyants at iitp dot ru
 
 ### Abstract
 
-####The ongoing pandemic of COVID is devastating. Here, we model COVID burden in Russia under an unmitigated epidemic. For this, we link publically available demographic data with estimates of age-stratified hospitalization, critical care and lethality rates. To model the burden on healthcare, we also use data on the number of invasive mechanical ventilation (IMV) units (ventilators) per region to estimate the adequacy of their current supply. 
+#### The ongoing pandemic of COVID is devastating. Here, we model COVID burden in Russia under an unmitigated epidemic. For this, we link publically available demographic data with estimates of age-stratified hospitalization, critical care and lethality rates. To model the burden on healthcare, we also use data on the number of invasive mechanical ventilation (IMV) units (ventilators) per region to estimate the adequacy of their current supply. 
 
-####This is work in progress, and estimates will be refined as data is accumulated. Please contact us with comments, suggestions or questions.
+#### This is work in progress, and estimates will be refined as data is accumulated. Please contact us with comments, suggestions or questions.
 
 ## Modelling assumptions
 1. We assume a uniform 60% population-wise infection rate across all regions. This is roughly the fraction of population expected to be infected at the end of the epidemic under the basic reproductive number (R0) of 2.5 in the absence of mitigation ([Anderson et al., 2020](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30567-5/fulltext)). 60% infected is a high estimate in the short term, but probably a reasonable estimate if the containment and suppression measures fail. The reported case counts are cumulative over the entire epidemic.
