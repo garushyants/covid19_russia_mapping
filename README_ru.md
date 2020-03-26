@@ -6,6 +6,8 @@
 
 ## !!Русский текст дополняется!!
 
+[English version/Английская версия(https://github.com/garushyants/covid19_russia_mapping/blob/master/README.md)
+
 ## Результаты
 ### Структура популяции
 

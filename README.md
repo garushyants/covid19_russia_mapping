@@ -4,7 +4,7 @@
 &#x00B2; Skoltech  
 *garushyants at iitp dot ru
 
-[Russian version/Русская версия](https://github.com/garushyants/covid19_russia_mapping/blob/master/README_ru.md]
+[Russian version/Русская версия](https://github.com/garushyants/covid19_russia_mapping/blob/master/README_ru.md)
 
 ### Abstract
 
