@@ -4,6 +4,8 @@
 &#x00B2; Skoltech  
 *garushyants at iitp dot ru
 
+[Russian version/Русская версия](https://github.com/garushyants/covid19_russia_mapping/blob/master/README_ru.md]
+
 ### Abstract
 
 #### The ongoing pandemic of COVID is devastating. Here, we model COVID burden in Russia under an unmitigated epidemic. For this, we link publically available demographic data with estimates of age-stratified hospitalization, critical care and lethality rates. To model the burden on healthcare, we also use data on the number of invasive mechanical ventilation (IMV) units (ventilators) per region to estimate the adequacy of their current supply. 
