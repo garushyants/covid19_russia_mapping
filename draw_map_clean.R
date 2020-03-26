@@ -126,18 +126,18 @@ final_IMV$region_tr<-stri_trans_general(final_IMV$region, "russian-latin/bgn")
 ###Worst and best regions by different metrics
 #Regions with highest and lowest % of critical cases
 bins.df.critical$region_tr<-stri_trans_general(bins.df.critical$region, "russian-latin/bgn")
-bins.df.critical_top<-bins.df.critical[order(-bins.df.critical$percent),][c(1:10),c(13,12)]
-bins.df.critical_bottom<-bins.df.critical[order(bins.df.critical$percent),][c(1:10),c(13,12)]
+bins.df.critical_top<-bins.df.critical[order(-bins.df.critical$percent),][c(1:10),c(11,13,12)]
+bins.df.critical_bottom<-bins.df.critical[order(bins.df.critical$percent),][c(1:10),c(11,13,12)]
 
 #The worst cases per IMV ratio
 final_IMV$region_tr<-stri_trans_general(final_IMV$region, "russian-latin/bgn")
-final_IMV_top<-final_IMV[order(-final_IMV$PerPerIMV),][c(1:10),c(6,5)]
-final_IMV_bottom<-final_IMV[order(final_IMV$PerPerIMV),][c(1:10),c(6,5)]
+final_IMV_top<-final_IMV[order(-final_IMV$PerPerIMV),][c(1:10),c(1,6,5)]
+final_IMV_bottom<-final_IMV[order(final_IMV$PerPerIMV),][c(1:10),c(1,6,5)]
 
 #Worst mortality
 bins.df.mort$region_tr<-stri_trans_general(bins.df.mort$region, "russian-latin/bgn")
-bins.df.mort_top<-bins.df.mort[order(-bins.df.mort$percent),][c(1:10),c(13,12)]
-bins.df.mort_bottom<-bins.df.mort[order(bins.df.mort$percent),][c(1:10),c(13,12)]
+bins.df.mort_top<-bins.df.mort[order(-bins.df.mort$percent),][c(1:10),c(11,13,12)]
+bins.df.mort_bottom<-bins.df.mort[order(bins.df.mort$percent),][c(1:10),c(11,13,12)]
 
 ##################
 #Final table with data
@@ -237,23 +237,23 @@ ttop<-ttheme_minimal(base_colour = "#006d2c",
                      core = list(fg_params = list(hjust=0, x=0.01, fontsize=12)))
 tbottom<-ttheme_minimal(base_colour = "#bd0026", 
                         core = list(fg_params = list(hjust=0, x=0.01, fontsize=12)))
-#Critical cases in region(% of population)
-critb<-tableGrob(bins.df.critical_bottom,theme = ttop, cols = NULL, rows =NULL)
-critt<-tableGrob(bins.df.critical_top,theme = tbottom, cols = NULL, rows =NULL)
-IMVt<-tableGrob(final_IMV_top,theme = tbottom, cols = NULL, rows =NULL)
-IMVb<-tableGrob(final_IMV_bottom,theme = ttop, cols = NULL, rows =NULL)
-mortb<-tableGrob(bins.df.mort_bottom,theme = ttop, cols = NULL, rows =NULL)
-mortt<-tableGrob(bins.df.mort_top,theme = tbottom, cols = NULL, rows =NULL)
+
+critb<-tableGrob(bins.df.critical_bottom[,c(2,3)],theme = ttop, cols = NULL, rows =NULL)
+critt<-tableGrob(bins.df.critical_top[,c(2,3)],theme = tbottom, cols = NULL, rows =NULL)
+IMVt<-tableGrob(final_IMV_top[,c(2,3)],theme = tbottom, cols = NULL, rows =NULL)
+IMVb<-tableGrob(final_IMV_bottom[,c(2,3)],theme = ttop, cols = NULL, rows =NULL)
+mortb<-tableGrob(bins.df.mort_bottom[,c(2,3)],theme = ttop, cols = NULL, rows =NULL)
+mortt<-tableGrob(bins.df.mort_top[,c(2,3)],theme = tbottom, cols = NULL, rows =NULL)
 
 critaligned <- gtable_combine(critb,critt, along=1)
 IMValigned <- gtable_combine(IMVb,IMVt, along=1)
 mortaligned <- gtable_combine(mortb,mortt, along=1)
 
-Table2<-grid.arrange(top = "Table 2. Fatality rate (%, population)\nThe ten best and worst regions",
+Table2<-grid.arrange(top = "Table 2. Fatality rate (%, population).\nThe ten top and bottom regions",
                      mortaligned, nrow=1)
-Table1<-grid.arrange(top = "Table 1. Critical cases in region (population, %). \nThe ten best and worst regions.",
+Table1<-grid.arrange(top = "Table 1. Critical cases in region (population, %).\nThe ten top and bottom regions",
                      critaligned, nrow=1)
-Table3<-grid.arrange(top = "Table 3. Critical cases per IMV.\nThe ten best and worst regions",
+Table3<-grid.arrange(top = "Table 3. Critical cases per IMV.\nThe ten top and bottom regions",
                      IMValigned, nrow=1)
 
 #############################################
@@ -271,6 +271,47 @@ ggsave("Fig6CasesperIMV.png",plot= PerPerIMV, path=path, width = dimw, height = 
 ggsave("Table1.png",plot= Table1, path=path, width = 20, height = 9, units = "cm")
 ggsave("Table2.png",plot= Table2, path=path, width = 20, height = 9, units = "cm")
 ggsave("Table3.png",plot= Table3, path=path, width = 20, height = 9, units = "cm")
+
+
+########################################
+#Plots in Russian
+popru<-pop+labs(fill = "Население (log10)")
+perc80ru<-perc80+labs(fill = "Население старше 80 (%)")
+mortru<-mort + labs(fill ="Смертность (кол-во человек)")
+hosppercru<-hospperc + labs(fill ="Госпитализация (% населения)")
+criticalpercru<-criticalperc + labs(fill ="Критические случаи (% населения)")
+IMVperpru<-IMVperp + labs(fill ="Количество ИВЛ на 100000 человек")
+PerPerIMVru<-PerPerIMV + labs(fill ="Количество критических случаев на ИВЛ")
+##tables in russian
+critbru<-tableGrob(bins.df.critical_bottom[,c(1,3)],theme = ttop, cols = NULL, rows =NULL)
+crittru<-tableGrob(bins.df.critical_top[,c(1,3)],theme = tbottom, cols = NULL, rows =NULL)
+IMVtru<-tableGrob(final_IMV_top[,c(1,3)],theme = tbottom, cols = NULL, rows =NULL)
+IMVbru<-tableGrob(final_IMV_bottom[,c(1,3)],theme = ttop, cols = NULL, rows =NULL)
+mortbru<-tableGrob(bins.df.mort_bottom[,c(1,3)],theme = ttop, cols = NULL, rows =NULL)
+morttru<-tableGrob(bins.df.mort_top[,c(1,3)],theme = tbottom, cols = NULL, rows =NULL)
+
+critalignedru <- gtable_combine(critbru,crittru, along=1)
+IMValignedru <- gtable_combine(IMVbru,IMVtru, along=1)
+mortalignedru <- gtable_combine(mortbru,morttru, along=1)
+
+Table2ru<-grid.arrange(top = "Таблица 2. Смертность (% населения).\nДесять регионов с самым высоким и низким числом",
+                       mortalignedru, nrow=1)
+Table1ru<-grid.arrange(top = "Таблица 1. Критические случаи по регионам (% населения).\nДесять регионов с самым высоким и низким числом",
+                       critalignedru, nrow=1)
+Table3ru<-grid.arrange(top = "Таблица 3. Количество критических случаев на один ИВЛ.\nДесять регионов с самым высоким и низким числом",
+                       IMValignedru, nrow=1)
+##############Save
+pathru<-"Figures_ru"
+ggsave("Fig0populationru.png",plot= popru, path=pathru, width = dimw, height = dimh, units = "cm")
+ggsave("Fig1perc80ru.png",plot= perc80ru, path=pathru, width = dimw, height = dimh, units = "cm")
+ggsave("Fig2mortalityru.png",plot= mortru, path=pathru, width = dimw, height = dimh, units = "cm")
+ggsave("Fig3hospitalizedru.png",plot= hosppercru, path=pathru, width = dimw, height = dimh, units = "cm")
+ggsave("Fig4criticalru.png",plot= criticalpercru, path=pathru, width = dimw, height = dimh, units = "cm")
+ggsave("Fig5IMVper100000ru.png",plot= IMVperpru, path=pathru, width = dimw, height = dimh, units = "cm")
+ggsave("Fig6CasesperIMVru.png",plot= PerPerIMVru, path=pathru, width = dimw, height = dimh, units = "cm")
+ggsave("Table1ru.png",plot= Table1ru, path=pathru, width = 20, height = 9, units = "cm")
+ggsave("Table2ru.png",plot= Table2ru, path=pathru, width = 20, height = 9, units = "cm")
+ggsave("Table3ru.png",plot= Table3ru, path=pathru, width = 20, height = 9, units = "cm")
 
 
 
