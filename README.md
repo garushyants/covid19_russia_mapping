@@ -8,7 +8,7 @@
 
 ### Abstract
 
-#### The ongoing pandemic of COVID is devastating. Here, we model COVID burden in Russia under an unmitigated epidemic. For this, we link publically available demographic data with estimates of age-stratified hospitalization, critical care and lethality rates. To model the burden on healthcare, we also use data on the number of invasive mechanical ventilation (IMV) units (ventilators) per region to estimate the adequacy of their current supply. 
+#### The ongoing pandemic of COVID is devastating. Here, we model COVID burden in Russia and the Republic of Crimea under an unmitigated epidemic. For this, we link publically available demographic data with estimates of age-stratified hospitalization, critical care and lethality rates. To model the burden on healthcare, we also use data on the number of invasive mechanical ventilation (IMV) units (ventilators) per region to estimate the adequacy of their current supply. 
 
 #### This is work in progress, and estimates will be refined as data is accumulated. Please contact us with comments, suggestions or questions.
 
