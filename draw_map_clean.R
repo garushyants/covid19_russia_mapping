@@ -249,11 +249,11 @@ critaligned <- gtable_combine(critb,critt, along=1)
 IMValigned <- gtable_combine(IMVb,IMVt, along=1)
 mortaligned <- gtable_combine(mortb,mortt, along=1)
 
-Table2<-grid.arrange(top = "Table 2. Mortality rate (%, population)\nThe ten best and worst regions",
+Table2<-grid.arrange(top = "Table 2. Fatality rate (%, population)\nThe ten best and worst regions",
                      mortaligned, nrow=1)
 Table1<-grid.arrange(top = "Table 1. Critical cases in region (population, %). \nThe ten best and worst regions.",
                      critaligned, nrow=1)
-Table3<-grid.arrange(top = "Table3. Critical cases per IMV.\nThe ten best and worst regions",
+Table3<-grid.arrange(top = "Table 3. Critical cases per IMV.\nThe ten best and worst regions",
                      IMValigned, nrow=1)
 
 #############################################
