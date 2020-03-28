@@ -259,7 +259,7 @@ Table2<-grid.arrange(top = "Table 2. Lethality (%, population).\nThe ten top and
                      mortaligned, nrow=1)
 Table1<-grid.arrange(top = "Table 1. Critical cases in region (population, %).\nThe ten top and bottom regions",
                      critaligned, nrow=1)
-Table3<-grid.arrange(top = "Table 3. Critical cases per IMV.\nThe ten top and bottom regions",
+Table3<-grid.arrange(top = "Table 3. Critical cases per IMV over the course of epidemic.\nThe ten top and bottom regions",
                      IMValigned, nrow=1)
 
 #############################################
@@ -287,7 +287,7 @@ mortru<-mort + labs(fill ="Число смертей")
 hosppercru<-hospperc + labs(fill ="Госпитализация (% населения)")
 criticalpercru<-criticalperc + labs(fill ="Случаи, требующие интенсивной терапии (% населения)")
 IMVperpru<-IMVperp + labs(fill ="Количество ИВЛ на 100000 человек")
-PerPerIMVru<-PerPerIMV + labs(fill ="Количество случаев, требующих интенсивной терапии, на аппарат ИВЛ за все время эпидемии")
+PerPerIMVru<-PerPerIMV + labs(fill ="Количество случаев, требующих интенсивной терапии,\nна аппарат ИВЛ за все время эпидемии")
 ##tables in russian
 critbru<-tableGrob(bins.df.critical_bottom[,c(1,3)],theme = ttop, cols = NULL, rows =NULL)
 crittru<-tableGrob(bins.df.critical_top[,c(1,3)],theme = tbottom, cols = NULL, rows =NULL)
@@ -304,7 +304,7 @@ Table2ru<-grid.arrange(top = "Таблица 2. Смертность (% насе
                        mortalignedru, nrow=1)
 Table1ru<-grid.arrange(top = "Таблица 1. Случаи, требующие интенсивной терапии, по регионам (% населения).\nДесять регионов с самым высоким и низким числом",
                        critalignedru, nrow=1)
-Table3ru<-grid.arrange(top = "Таблица 3. Количество случаев, требующих интенсивной терапии, на аппарат ИВЛ.\nДесять регионов с самым высоким и низким числом",
+Table3ru<-grid.arrange(top = "Таблица 3. Количество случаев, требующих интенсивной терапии,\n на аппарат ИВЛ за все время эпидемии.\nДесять регионов с самым высоким и низким числом",
                        IMValignedru, nrow=1)
 ##############Save
 pathru<-"Figures_ru"
