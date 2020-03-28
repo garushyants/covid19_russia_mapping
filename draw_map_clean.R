@@ -233,7 +233,7 @@ PerPerIMV<-ggplot(data = rus.map) +
   geom_sf(aes(fill=final_IMV$PerPerIMV), lwd = lwdp) + 
   scale_fill_viridis(option="B", direction = -1,begin = 0.3) +
   coord_sf(crs=projection)+
-  labs(fill = "Critical cases per one IMV")+
+  labs(fill = "Critical cases per one IMV over the course of epidemic")+
   common
 
 ###
@@ -287,7 +287,7 @@ mortru<-mort + labs(fill ="Число смертей")
 hosppercru<-hospperc + labs(fill ="Госпитализация (% населения)")
 criticalpercru<-criticalperc + labs(fill ="Случаи, требующие интенсивной терапии (% населения)")
 IMVperpru<-IMVperp + labs(fill ="Количество ИВЛ на 100000 человек")
-PerPerIMVru<-PerPerIMV + labs(fill ="Количество случаев, требующих интенсивной терапии, на аппарат ИВЛ")
+PerPerIMVru<-PerPerIMV + labs(fill ="Количество случаев, требующих интенсивной терапии, на аппарат ИВЛ за все время эпидемии")
 ##tables in russian
 critbru<-tableGrob(bins.df.critical_bottom[,c(1,3)],theme = ttop, cols = NULL, rows =NULL)
 crittru<-tableGrob(bins.df.critical_top[,c(1,3)],theme = tbottom, cols = NULL, rows =NULL)
