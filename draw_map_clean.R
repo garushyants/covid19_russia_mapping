@@ -28,8 +28,13 @@ age_data<-read.csv("rosstat_combined.tsv",
 #As well the data was added from: https://www.hwcompany.ru/blog/expert/nali4ie_apparatov_ivl_na_22_03_2020
 #The data is provided in the repository
 ###
-IMV_data<-read.csv("IMV_meduza_impr.csv",
-                   stringsAsFactors = FALSE, sep = ",", header = TRUE)
+#IMV_data<-read.csv("IMV_meduza_impr.csv",
+#                   stringsAsFactors = FALSE, sep = ",", header = TRUE)
+
+####
+#Updated ventillators data from Meduza (Hedaway report)
+IMV_data<-read.csv("vent_ikashnitsky.csv",
+                   stringsAsFactors = FALSE, sep = "\t", header = TRUE)
 
 #Mortality rates and hospitalisation
 #Data on mortality and hospitalization rates was obtained from Verity et al., 2020, medarxiv
