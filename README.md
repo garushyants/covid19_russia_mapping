@@ -61,7 +61,7 @@ Here, we analyze the availability of IMV units across regions from public data. 
 
 ![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig5IMVper100000.png)
 
-As shown above, differences in demographic structure between regions will lead to differences in the proportion of population requiring critical care. Combined with discrepancies in the numbers of units, this leads to major differences between regions in IMV unit occupancies over the course of the epidemic. The predicted cumulative number of critical cases per IMV unit ranges between 7.4 for the Khanty-Mansiyskiy region and 210.0 for the Kaluzhskaya region. 
+As shown above, differences in demographic structure between regions will lead to differences in the proportion of population requiring critical care. Combined with discrepancies in the numbers of units, this leads to major differences between regions in IMV unit occupancies over the course of the epidemic. The predicted cumulative number of critical cases per IMV unit ranges between 7.0 in Tyva 7.4 for the Khanty-Mansiyskiy region and 111.0 for the Leningradsky region. 
 
 ![alt text](https://github.com/garushyants/covid19_russia_mapping/blob/master/Figures/Fig6CasesperIMV.png)
 
@@ -78,6 +78,7 @@ Maps for Russia and Ukraine were downloaded from [GADM](https://gadm.org/downloa
 ### IMV data
 Estimates for the numbers of invasive mechanical ventilators (IMV) were obtained from [meduza.io](https://meduza.io/feature/2020/03/20/v-italii-iz-za-koronavirusa-katastroficheski-ne-hvataet-apparatov-ivl-v-rossii-ih-gorazdo-bolshe-no-eto-ne-znachit-chto-my-luchshe-gotovy-k-epidemii) with additions from Headway [current report](https://www.hwcompany.ru/blog/expert/nali4ie_apparatov_ivl_na_22_03_2020).
 The resulting table [IMV_meduza_impr.csv](https://github.com/garushyants/covid19_russia_mapping/blob/master/IMV_meduza_impr.csv) is available in repository.
+Update!! We know use the data on ventilators from Headway, provided in [ikashnitsky repo](https://github.com/ikashnitsky/covid19-russia)
 
 ### Fatality and hospitalization rates
 Data on fatality and hospitalization rates was obtained from [Verity et al., 2020](https://www.medrxiv.org/content/10.1101/2020.03.09.20033357v1.full.pdf), with the hospitalization rate for the age group 0-9 assumed to equal 0.001. Data on cases requiring critical care was obtained from [Ferguson et al., 2020](https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf). 
