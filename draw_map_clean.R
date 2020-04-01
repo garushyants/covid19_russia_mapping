@@ -80,6 +80,8 @@ final_IMV<-IMV_data_merged[match(rus.map$NL_NAME_1, IMV_data_merged$region),]
 #From demographics data subset only age infromation (no gender)
 age_data_all<-subset(age_data, age_data$gender == "all")
 age_data_all_sorted<-age_data_all[match(rus.map$NL_NAME_1, age_data_all$region),]
+
+
 #Subset only over 80 and calculate portion
 age_data_all_o80<-age_data_all_sorted[,c("region","X80.и.старше","sum")]
 age_data_all_o80$part<-age_data_all_o80$X80.и.старше*100/age_data_all_o80$sum
