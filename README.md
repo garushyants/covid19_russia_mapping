@@ -78,7 +78,7 @@ Maps for Russia and Ukraine were downloaded from [GADM](https://gadm.org/downloa
 ### IMV data
 Estimates for the numbers of invasive mechanical ventilators (IMV) were obtained from [meduza.io](https://meduza.io/feature/2020/03/20/v-italii-iz-za-koronavirusa-katastroficheski-ne-hvataet-apparatov-ivl-v-rossii-ih-gorazdo-bolshe-no-eto-ne-znachit-chto-my-luchshe-gotovy-k-epidemii) with additions from Headway [current report](https://www.hwcompany.ru/blog/expert/nali4ie_apparatov_ivl_na_22_03_2020).
 The resulting table [IMV_meduza_impr.csv](https://github.com/garushyants/covid19_russia_mapping/blob/master/IMV_meduza_impr.csv) is available in repository.
-Update!! We know use the data on ventilators from Headway, provided in [ikashnitsky repo](https://github.com/ikashnitsky/covid19-russia)
+!!! Starting March, 30 2020!!! We use the updated data on available number of ventilators per region. This data was obtained by Headway from analysis of public procurement from 2017 to 2020. We utilized this data as it is provided in [ikashnitsky repo](https://github.com/ikashnitsky/covid19-russia). The results on the number of critical cases per IMV unit are different for some regions after this update.
 
 ### Fatality and hospitalization rates
 Data on fatality and hospitalization rates was obtained from [Verity et al., 2020](https://www.medrxiv.org/content/10.1101/2020.03.09.20033357v1.full.pdf), with the hospitalization rate for the age group 0-9 assumed to equal 0.001. Data on cases requiring critical care was obtained from [Ferguson et al., 2020](https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf). 
