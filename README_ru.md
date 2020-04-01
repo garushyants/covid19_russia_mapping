@@ -79,7 +79,7 @@
 ### Данные по количеству аппаратов ИВЛ
 Оценки числа аппаратов ИВЛ по регионам России были получены из статьи на сайте [meduza.io](https://meduza.io/feature/2020/03/20/v-italii-iz-za-koronavirusa-katastroficheski-ne-hvataet-apparatov-ivl-v-rossii-ih-gorazdo-bolshe-no-eto-ne-znachit-chto-my-luchshe-gotovy-k-epidemii) и дополнены данными, опубликованными агенством Headway в [отчете](https://www.hwcompany.ru/blog/expert/nali4ie_apparatov_ivl_na_22_03_2020).
 Итоговая таблица, содержащая эти данные,  [IMV_meduza_impr.csv](https://github.com/garushyants/covid19_russia_mapping/blob/master/IMV_meduza_impr.csv) находится в репозитории.  
-####!!!Обновление от 30.03.2020!!!
+##### !!!Обновление от 30.03.2020!!!
  В версии, которую Вы видите сейчас мы используем данные по ИВЛ для всех регионов, основанные на анализе закупок, проведенных компанией Headway. Эти данные взяты из репозитория [ikashnitsky](https://github.com/ikashnitsky/covid19-russia). Данные по количеству критических больных на один аппарат ИВЛ для некоторых регионов отличаются от тех, которые Вы могли видеть в исходной версии.
 
 ### Оценки смертности и количества госпитализаций больных COVID-19
